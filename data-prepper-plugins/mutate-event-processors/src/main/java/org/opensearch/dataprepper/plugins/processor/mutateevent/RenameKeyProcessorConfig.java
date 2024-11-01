@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.opensearch.dataprepper.model.annotations.ExampleValues;
+import org.opensearch.dataprepper.model.annotations.ExampleValues.Example;
 import org.opensearch.dataprepper.model.event.EventKey;
 import org.opensearch.dataprepper.model.event.EventKeyConfiguration;
 import org.opensearch.dataprepper.model.event.EventKeyFactory;
@@ -49,6 +51,9 @@ public class RenameKeyProcessorConfig {
         @JsonPropertyDescription("A <a href=\"https://opensearch.org/docs/latest/data-prepper/pipelines/expression-syntax/\">conditional expression</a>, " +
                 "such as <code>/some-key == \"test\"</code>, that will be evaluated to determine whether the processor will be " +
                 "run on the event. By default, all events will be processed unless otherwise stated.")
+        @ExampleValues({
+            @Example(value = "/some-key == test", description = "Only runs the rename_keys processor on the Event if some_key is 'test'.")
+        })
         private String renameWhen;
 
         private Pattern fromKeyCompiledPattern;

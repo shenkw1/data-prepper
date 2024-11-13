@@ -1,0 +1,38 @@
+{
+  "convert_type": [
+      "key", "keys", "type"
+  ],
+  "csv": [
+      "source"
+  ],
+  "date": [
+      "match", "from_time_received"
+  ],
+  "delay": [
+      "for"
+  ],
+  "grok": [
+      "match"
+  ],
+  "key_value": [
+      "source", "destination"
+  ],
+  "list_to_map": [
+      "source", "key", "value_key"
+  ],
+  "parse_ion": [
+      "source"
+  ],
+  "parse_json": [
+      "source"
+  ],
+  "parse_xml": [
+      "source"
+  ],
+  "split_event": [
+      "delimiter", "delimiter_regex"
+  ],
+  "translate": [
+      "file", "mappings"
+  ]
+}

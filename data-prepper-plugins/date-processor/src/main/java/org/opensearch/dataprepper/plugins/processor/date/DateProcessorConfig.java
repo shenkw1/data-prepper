@@ -155,8 +155,8 @@ public class DateProcessorConfig {
     })
     private String outputFormat = DEFAULT_OUTPUT_FORMAT;
 
-    @JsonProperty("to_origination_metadata")
-    @JsonAlias("origination_timestamp_to_metadata")
+    @JsonProperty("origination_timestamp_to_metadata")
+    @JsonAlias("to_origination_metadata")
     @JsonPropertyDescription("Include the origination timestamp in the metadata. " +
             "Enabling this option will use this timestamp to report the EndToEndLatency metric " +
             "when events reach the sink. Default is <code>false</code>.")

@@ -44,14 +44,14 @@ public class FlattenProcessorConfig {
     })
     private String target;
 
-    @JsonProperty("remove_processed_fields")
-    @JsonAlias("remove_source_keys")
+    @JsonProperty("remove_source_keys")
+    @JsonAlias("remove_processed_fields")
     @JsonPropertyDescription("When <code>true</code>, the processor removes all processed fields from the source. " +
             "The default is <code>false</code> which leaves the source fields.")
     private boolean removeProcessedFields = false;
 
-    @JsonProperty(REMOVE_LIST_INDICES_KEY)
-    @JsonAlias("remove_list_items")
+    @JsonProperty("remove_list_items")
+    @JsonAlias(REMOVE_LIST_INDICES_KEY)
     @JsonPropertyDescription("When <code>true</code>, the processor converts the fields from the source map into lists and " +
             "puts the lists into the target field. Default is <code>false</code>.")
     private boolean removeListIndices = false;

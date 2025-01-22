@@ -56,8 +56,8 @@ public class ConvertEntryTypeProcessorConfig implements ConverterArguments {
     @JsonPropertyDescription("Target type for the values. Default value is <code>integer</code>.")
     private TargetType type = TargetType.INTEGER;
 
-    @JsonProperty("null_values")
-    @JsonAlias("null_conversion_values")
+    @JsonProperty("null_conversion_values")
+    @JsonAlias("null_values")
     @JsonPropertyDescription("String representation of what constitutes a null value. If the field value equals one of these strings, then the value is considered null and is converted to null.")
     private List<String> nullValues;
 

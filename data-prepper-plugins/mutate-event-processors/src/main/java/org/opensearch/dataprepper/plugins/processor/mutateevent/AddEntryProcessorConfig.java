@@ -79,7 +79,8 @@ public class AddEntryProcessorConfig {
 
         @JsonProperty(METADATA_KEY_KEY)
         @JsonPropertyDescription("The key for the new metadata attribute. The argument must be a literal string key " +
-                "and not a JSON Pointer. At least one of <code>key</code> or <code>metadata_key</code> is required.")
+                "and not a JSON Pointer. Adds an attribute to the Events that will not be sent to the sinks, but can be used for condition expressions and routing with the getMetadata function. " +
+                "At least one of <code>key</code> or <code>metadata_key</code> is required.")
         @AlsoRequired(values = {
                 @AlsoRequired.Required(name="key", allowedValues = {"null"})
         })
@@ -132,7 +133,7 @@ public class AddEntryProcessorConfig {
 
         @JsonProperty(OVERWRITE_IF_KEY_EXISTS_KEY)
         @JsonPropertyDescription("When set to <code>true</code>, the existing value is overwritten if <code>key</code> already exists " +
-                "in the event. The default value is <code>false</code>.")
+                "in the event. Only one of <code>overwrite_if_key_exists</code> or <code>append_if_key_exists</code> can be <code>true</code>. The default value is <code>false</code>.")
         @AlsoRequired(values = {
                 @AlsoRequired.Required(name=APPEND_IF_KEY_EXISTS_KEY, allowedValues = {"false"})
         })

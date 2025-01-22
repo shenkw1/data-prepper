@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonClassDescription;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import org.opensearch.dataprepper.model.annotations.AlsoRequired;
 import org.opensearch.dataprepper.model.annotations.ConditionalRequired;
 import org.opensearch.dataprepper.model.annotations.ConditionalRequired.IfThenElse;
@@ -56,6 +57,7 @@ public class ConvertEntryTypeProcessorConfig implements ConverterArguments {
     private TargetType type = TargetType.INTEGER;
 
     @JsonProperty("null_values")
+    @JsonAlias("null_conversion_values")
     @JsonPropertyDescription("String representation of what constitutes a null value. If the field value equals one of these strings, then the value is considered null and is converted to null.")
     private List<String> nullValues;
 

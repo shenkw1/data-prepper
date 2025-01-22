@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.validation.constraints.AssertTrue;
 import org.opensearch.dataprepper.model.annotations.AlsoRequired;
 import org.opensearch.dataprepper.model.annotations.ConditionalRequired;
@@ -155,6 +156,7 @@ public class DateProcessorConfig {
     private String outputFormat = DEFAULT_OUTPUT_FORMAT;
 
     @JsonProperty("to_origination_metadata")
+    @JsonAlias("origination_timestamp_to_metadata")
     @JsonPropertyDescription("Include the origination timestamp in the metadata. " +
             "Enabling this option will use this timestamp to report the EndToEndLatency metric " +
             "when events reach the sink. Default is <code>false</code>.")
